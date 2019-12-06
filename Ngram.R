@@ -3,6 +3,12 @@
 #https://github.com/mark-blackmore/JHU-Data-Science-Capstone
 #Thanks Mark really learned a lot and was very helpfull
 
+two_Words <- readRDS("./Final/bi_words_fast.rds")
+tree_Words  <- readRDS("./Final/tri_words_fast.rds")
+four_Words <- readRDS("./Final/quad_words_fast.rds")
+
+
+
 bigram <- function(input_words){
         num <- length(input_words)
         filter(two_Words, 

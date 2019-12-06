@@ -3,9 +3,9 @@
 #https://github.com/mark-blackmore/JHU-Data-Science-Capstone
 #Thanks Mark really learned a lot and was very helpfull
 
-two_Words <- readRDS('https://github.com/yohan78/CapstoneNPLCoursera-Final/tree/master/Final/two_Words.rds')
-tree_Words  <- readRDS('https://github.com/yohan78/CapstoneNPLCoursera-Final/tree/master/Final/tree_Words.rds')
-four_Words <- readRDS('https://github.com/yohan78/CapstoneNPLCoursera-Final/tree/master/Final/four_Words.rds')
+two_Words <- readRDS("./tree/master/Final/two_Words.rds")
+tree_Words  <- readRDS("./tree/master/Final/tree_Words.rds")
+four_Words <- readRDS("./tree/master/Final/four_Words.rds")
 
 
 

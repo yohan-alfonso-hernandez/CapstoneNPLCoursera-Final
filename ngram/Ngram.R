@@ -3,9 +3,9 @@
 #https://github.com/mark-blackmore/JHU-Data-Science-Capstone
 #Thanks Mark really learned a lot and was very helpfull
 
-two_Words <- readRDS("/two_Words.rds")
-tree_Words  <- readRDS("/tree_Words.rds")
-four_Words <- readRDS("/four_Words.rds")
+two_Words <- readRDS("/tree/master/Final/two_Words.rds")
+tree_Words  <- readRDS("/tree/master/Final/tree_Words.rds")
+four_Words <- readRDS("/tree/master/Final/four_Words.rds")
 
 bigram <- function(input_words){
         num <- length(input_words)
@@ -43,9 +43,7 @@ fourgram <- function(input_words){
         ifelse(out=="character(0)", trigram(input_words), return(out))
 }
 
-
 #Create User Input and Data Cleaning Function; Calls the matching functions
-
 ngrams <- function(input){
         input <- data_frame(text = input)
         replace_reg <- "[^[:alpha:][:space:]]*"

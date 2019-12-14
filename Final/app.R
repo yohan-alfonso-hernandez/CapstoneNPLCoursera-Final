@@ -13,7 +13,7 @@ suppressPackageStartupMessages({
     library(stringr)
 })
 
-
+#source("app.r")
 
 #' Define UI for application 
 ui <- fluidPage(
@@ -29,13 +29,15 @@ ui <- fluidPage(
             h5("1. Enter a word or words in the text box."),
             h5("3. No need to hit enter of submit."),
             h5("4. A question mark means no prediction"),
+            br(),
+            a("Source Code", href = "https://github.com/yohan78/CapstoneNPLCoursera-Final/tree/master/Final")
         ),
         
         # Show a plot of the generated distribution
         mainPanel(
             tabsetPanel(
                 tabPanel("predict",
-                         textInput("user_input", ("Your Input:"),value = "erase this"),
+                         textInput("user_input", ("Your Input:"),value = "change this"),
                          ("Predicted Next Word:"),(textOutput("ngram_output")))
                 
             )   
@@ -43,25 +45,24 @@ ui <- fluidPage(
     )
 )
 
+
+
+
 #' Define server logic required to draw a histogram
 
 library(shiny)
 require(stringr)
 library(sqldf)
 
-
-  
+ two_Words <- readRDS("dos_Words.rds")
+tree_Words  <- readRDS("tres_Words.rds")
+four_Words <- readRDS("cuatro_Words.rds")
 
 server <- function(input, output) {
-    
-    output$ngram_output <- renderText({ngrams(input$user_input)})
-    
-    # two_Words <- readRDS("two_Words.rds")
-    # tree_Words  <- readRDS("tree_Words.rds")
-    # four_Words <- readRDS("four_Words.rds")
-    
-
-}
+  
+  output$ngram_output <- renderText({ngrams(input$user_input)})
+  
+  }
 
     bigram <- function(input_words){
         num <- length(input_words)
@@ -115,8 +116,8 @@ server <- function(input, output) {
         # Output
         return(out)
     }
+  
     
-    
-# Run the application 
+    # Run the application 
 shinyApp(ui = ui, server = server)
 
